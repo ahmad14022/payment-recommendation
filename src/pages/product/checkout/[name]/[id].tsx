@@ -11,11 +11,12 @@ const Checkout = () => {
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     const { id, name } = router.query; // Mendapatkan ID dan nama dari URL
-    const count = parseInt(router.query.count as string) || 1; // Mendapatkan jumlah produk dari query
+    const count = parseInt(router.query.count as string) || 1;
+
 
     useEffect(() => {
         if (id) {
-            async function fetchProductDetail() {
+            async function fetchProductCheckout() {
                 try {
                     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
                     setProduct(response.data);
@@ -26,7 +27,7 @@ const Checkout = () => {
                 }
             }
 
-            fetchProductDetail();
+            fetchProductCheckout();
         }
     }, [id]);
 
@@ -44,7 +45,6 @@ const Checkout = () => {
         <>
             <Navbar />
             <div className="flex flex-col p-5 gap-5">
-               
                 <CardDetail
                     title={product.title}
                     image={product.image}

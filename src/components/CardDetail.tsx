@@ -22,20 +22,20 @@ export default function CardDetail({
     totalPrice,
     description,
 }: CardDetailProps) {
-    const [showOptions, setShowOptions] = useState(false); // State untuk toggle dropdown
-    const [selectedOption, setSelectedOption] = useState('Pilih Bank'); // State untuk menyimpan opsi terpilih
+    const [showOptions, setShowOptions] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('Pilih Bank');
 
     const toggleOptions = () => {
-        setShowOptions(!showOptions); // Toggle dropdown saat opsi lainnya di klik
+        setShowOptions(!showOptions);
     };
 
     const handleOptionSelect = (option: string) => {
-        setSelectedOption(option); // Set opsi terpilih
-        setShowOptions(false); // Menutup dropdown setelah memilih
+        setSelectedOption(option);
+        setShowOptions(false);
     };
 
     return (
-        <div className="flex justify-center items-center gap-20 mt-3">
+        <div className="flex justify-center items-center gap-20 mt-3 mb-5">
             <div className="flex flex-col gap-5">
                 <h1 className="text-3xl text-gray-700 font-bold">Ringkasan Belanja</h1>
                 <div className="w-[900px] border border-gray-200 rounded-lg shadow-lg p-4">
@@ -43,7 +43,7 @@ export default function CardDetail({
                         <div className="flex gap-7">
                             <Image
                                 src={image}
-                                alt={title}
+                                alt={`Gambar ${title}`} // Properti alt ditambahkan
                                 width={200}
                                 height={200}
                                 className="h-[300px] object-cover rounded"
@@ -88,30 +88,28 @@ export default function CardDetail({
                 <div className="w-[460px] h-[250px] border border-gray-200 rounded-2xl shadow-lg p-4">
                     <div className="flex flex-col p-4 gap-4">
                         <div className="border border-gray-200 rounded-xl p-4">
-                            <div className="flex flex-col gap-1">
-                                <div className="flex gap-3 items-center">
-                                    <Image
-                                        src="/bank-mandiri.png"
-                                        alt="mandiri"
-                                        width={50}
-                                        height={20}
-                                        className="h-[40px]"
-                                    />
-                                    <span className="text-gray-400 text-lg p-1 font-medium">
-                                        Mandiri 11-33-XXXXXXXXX-9
-                                    </span>
-                                    <p className="text-4xl text-[#0092ac]">
-                                        <i className="bx bxs-check-circle"></i>
-                                    </p>
-                                </div>
-                                <p className="text-gray-400 text-lg mt-2">
-                                    Dipilih otomatis karena sering digunakan
+                            <div className="flex gap-3 items-center">
+                                <Image
+                                    src="/bank-mandiri.png"
+                                    alt="Logo Bank Mandiri" // Properti alt ditambahkan
+                                    width={50}
+                                    height={20}
+                                    className="h-[40px]"
+                                />
+                                <span className="text-gray-400 text-lg p-1 font-medium">
+                                    Mandiri 11-33-XXXXXXXXX-9
+                                </span>
+                                <p className="text-4xl text-[#0092ac]">
+                                    <i className="bx bxs-check-circle"></i>
                                 </p>
                             </div>
+                            <p className="text-gray-400 text-lg mt-2">
+                                Dipilih otomatis karena sering digunakan
+                            </p>
                         </div>
                         <div
                             className="border border-gray-200 rounded-xl p-3 cursor-pointer"
-                            onClick={toggleOptions} // Toggle dropdown saat diklik
+                            onClick={toggleOptions}
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
@@ -130,7 +128,7 @@ export default function CardDetail({
                         {showOptions && (
                             <div className="border border-gray-200 rounded-xl cursor-pointer bg-white absolute w-[400px]">
                                 <ul className="list-none">
-                                    {[ "Bank Mandiri", "Bank BCA", "Bank BNI", "GoPay", "OVO", "ShopeePay"].map(
+                                    {["Bank Mandiri", "Bank BCA", "Bank BNI", "GoPay", "OVO", "ShopeePay"].map(
                                         (option) => (
                                             <li
                                                 key={option}

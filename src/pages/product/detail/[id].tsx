@@ -86,7 +86,7 @@ const ProductDetail = () => {
 
                                     <h1 className="text-lg text-gray-500">Total Harga</h1>
                                     <h1 className="text-3xl font-bold text-[#0092ac]">$ {product.price * countProduct}</h1>
-                                    <Link href={`/product/checkout/${product.title}/${product.id}?count=${countProduct}`}>
+                                    <Link href={`/product/detail/order/${product.id}?count=${countProduct}`}>
                                         <button className="px-6 w-full h-12 rounded-lg bg-[#0092ac] font-bold text-white mt-16">Proceed to Checkout</button>
                                     </Link>
                                 </div>
