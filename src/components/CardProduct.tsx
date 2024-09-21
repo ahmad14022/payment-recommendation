@@ -6,7 +6,7 @@ import Image from "next/image";
 
 interface CardProps {
     title: string;
-    price: string;
+    price: number;
     image?: string;
     url?: string;
     category: string;

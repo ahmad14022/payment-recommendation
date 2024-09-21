@@ -7,8 +7,21 @@ import Image from "next/image";
 import Aside from "@/components/Aside";
 import Footer from "@/components/Footer";
 
+interface Product {
+    id: number;
+    title: string;
+    price: number;
+    category: string;
+    image: string;
+    rating: {
+        rate: number;
+        count: number;
+    };
+}
+
+
 const Page = () => {
-    const [products, setProducts] = useState<any[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -39,20 +52,33 @@ const Page = () => {
                     {/* Ellipse 1 & 2 Positioned Absolutely */}
                     <Image
                         src='/Ellipse-1.png'
-                        alt="Ellipse 1"
+                        alt="Decorative ellipse 1" // Menambahkan alt yang sesuai
                         width={600}
                         height={600}
                         className="absolute bottom-3 right-[320px] z-10"
                     />
                     <Image
                         src='/Ellipse-2.png'
-                        alt="Ellipse 2"
+                        alt="Decorative ellipse 2" // Menambahkan alt yang sesuai
                         width={700}
                         height={700}
                         className="absolute bottom-0 right-[270px] z-10"
                     />
+                    <Image
+                        src='/rounded.png'
+                        alt="" // Gambar dekoratif tanpa alt
+                        width={70}
+                        height={70}
+                        className="absolute top-[90px] right-10"
+                    />
+                    <Image
+                        src="/hero-1.png"
+                        alt="Hero image displaying local products" // Alt yang deskriptif
+                        width={950}
+                        height={577}
+                        className="min-h-[calc(100vh-100px)] object-cover relative z-20"
+                    />
 
-                    <Image src='/rounded.png' width={70} height={70} className="absolute top-[90px] right-10" />
 
                     {/* Hero Content */}
                     <div className="flex justify-around items-center h-full relative z-20">

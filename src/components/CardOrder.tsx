@@ -6,7 +6,7 @@ import Image from "next/image";
 
 interface CardProps {
     title: string;
-    price: string;
+    price: number;
     image?: string;
     url?: string;
     count: number;
@@ -31,12 +31,13 @@ export default function CardOrder({ title, url, image, price, count, }: CardProp
                             </div>
                             <div className="flex gap-4">
                                 <Image
-                                    src={image}
+                                    src={image ? image : '/default-image.png'} // Gambar default jika image undefined
                                     alt={title}
                                     width={100}
                                     height={100}
                                     className="h-[200px] w-[200px] object-cover rounded"
                                 />
+
                                 <div className="flex flex-col gap-2 w-full">
                                     <p className="text-lg font-bold text-[#F7931E]">Tersedia 50</p>
                                     <div className="flex justify-between">

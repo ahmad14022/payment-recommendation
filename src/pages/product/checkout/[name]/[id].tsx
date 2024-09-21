@@ -6,13 +6,25 @@ import Navbar from '@/components/Navbar';
 import CardDetail from '@/components/CardDetail';
 import Footer from '@/components/Footer';
 
+type Product = {
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+    category: string;
+    description: string;
+    rating: {
+        rate: number;
+        count: number;
+    };
+};
+
 const Checkout = () => {
-    const [product, setProduct] = useState<any>(null);
+    const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
-    const { id, name } = router.query; // Mendapatkan ID dan nama dari URL
+    const { id } = router.query; // name dihapus karena tidak digunakan
     const count = parseInt(router.query.count as string) || 1;
-
 
     useEffect(() => {
         if (id) {
@@ -52,12 +64,12 @@ const Checkout = () => {
                     category={product.category}
                     rating={product.rating.rate}
                     count={count}
-                    totalPrice={totalPrice} // Pass totalPrice here
+                    totalPrice={totalPrice}
                     description={product.description}
                 />
                 {/* Tambahkan detail lain yang dibutuhkan untuk checkout */}
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

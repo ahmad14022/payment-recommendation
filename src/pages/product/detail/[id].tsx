@@ -7,8 +7,21 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 
+type Product = {
+    id: number;
+    title: string;
+    price: number;
+    image: string;
+    category: string;
+    description: string;
+    rating: {
+        rate: number;
+        count: number;
+    };
+};
+
 const ProductDetail = () => {
-    const [product, setProduct] = useState<any>(null);
+    const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const [countProduct, setCountProduct] = useState(1);
     const router = useRouter();
@@ -95,7 +108,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </>
     );
 };

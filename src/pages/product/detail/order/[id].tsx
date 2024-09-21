@@ -1,4 +1,4 @@
-// pages/product/detail/[id].tsx
+// pages/product/detail/order/[id].tsx
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -8,22 +8,33 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import CardOrder from "@/components/CardOrder";
 
+// Define the type for product
+interface Product {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    category: string;
+    image: string;
+    rating: {
+        rate: number;
+        count: number;
+    };
+}
+
 const OrderDetail = () => {
-    const [product, setProduct] = useState<any>(null);
+    const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
     const { id } = router.query;
     const count = parseInt(router.query.count as string) || 1;
 
-    // Variabel untuk menyimpan harga dan biaya lainnya
     const shippingCost = 15.00;
     const shippingTax = 50.00;
     const protectionCost = 5.00;
-    // Pastikan totalPrice hanya dihitung ketika product sudah ada
     const totalPrice = product ? product.price * count : 0;
-
-    // Hitung total biaya akumulasi
     const totalCost = totalPrice + shippingCost + shippingTax + protectionCost;
+
     useEffect(() => {
         if (id) {
             async function fetchOrderDetail() {
@@ -49,9 +60,6 @@ const OrderDetail = () => {
         return <p className="text-center text-red-500">Product not found.</p>;
     }
 
-
-
-
     return (
         <>
             <Navbar />
@@ -76,7 +84,7 @@ const OrderDetail = () => {
                         title={product.title}
                         image={product.image}
                         price={product.price}
-                        count={count} // Tambahkan count di sini
+                        count={count}
                     />
                 </div>
 
@@ -84,7 +92,6 @@ const OrderDetail = () => {
                     <div className="w-[460px] h-[450px] border border-gray-200 rounded-2xl shadow-lg p-4">
                         <div className="flex flex-col p-4 gap-4">
                             <p className="text-2xl font-bold text-gray-700">Ringkasan Belanja</p>
-
                             <div className="flex flex-col  gap-1">
                                 <div className="flex justify-between gap-3">
                                     <p className="text-lg font-bold text-gray-600">Total Harga ({count} barang)</p>
@@ -111,7 +118,7 @@ const OrderDetail = () => {
                             </div>
                             <div className="w-full border border-[#F7931E] border-dashed rounded-xl bg-[#FEF2E6] h-12 flex items-center gap-3 px-3 justify-between">
                                 <div className="flex items-center gap-3">
-                                    <Image src="/discount.png" width={25} height={25} className="h-[25px]" />
+                                    <Image src="/discount.png" width={25} height={25} className="h-[25px]" alt="Discount" />
                                     <p className="text-gray-700 font-medium">Hemat Besar dengan Voucher</p>
                                 </div>
                                 <span className="text-[#F7931E]">
@@ -121,7 +128,7 @@ const OrderDetail = () => {
                             <Link
                                 href={{
                                     pathname: `/product/checkout/${product.title}/${product.id}`,
-                                    query: { count: count }, // Gunakan countProduct yang sudah di-update
+                                    query: { count: count },
                                 }}
                             >
                                 <button className="w-full rounded-xl bg-[#0092ac] font-bold text-white h-12 mt-5">
@@ -130,15 +137,6 @@ const OrderDetail = () => {
                             </Link>
                         </div>
                     </div>
-                    {/* <div className="flex gap-5 items-center p-5">
-                        <div className="flex flex-col gap-2 flex-shrink-0">
-                            <p className="text-xl text-[#0092ac] font-bold">${totalPrice.toFixed(2)}</p>
-                            <p className="text-gray-600 text-lg font-semibold">
-                                Lihat Detail Pembayaran
-                            </p>
-                
-                        </div>
-                    </div> */}
                 </div>
 
             </div>

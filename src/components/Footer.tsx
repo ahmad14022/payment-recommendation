@@ -36,11 +36,11 @@ export default function Footer() {
                         <ul>
                             <li className="text-lg font-medium text-gray-400 mb-2">Gedung Telkom Direktorat Business and Technology</li>
                             <li className="text-lg font-medium text-gray-400 mb-2">Jln. Prof. Dr. Soepomo No. 139, Jakarta Selatan, DKI Jakarta, 12810 Indonesia</li>
-                            <li className="text-lg font-medium text-gray-400 mb-3">Senin - Jum'at | 08.00 - 17.00 WIB</li>
-                            <li className="text-lg font-medium text-gray-400 mb-5"><Image src="/social-media.png" width={200} height={200} /></li>
+                            <li className="text-lg font-medium text-gray-400 mb-3">Senin - Jum&apos;at | 08.00 - 17.00 WIB</li>
+                            <li className="text-lg font-medium text-gray-400 mb-5"><Image src="/social-media.png" width={200} height={200} alt="Social Media Icons" /></li>
                             <li className="text-lg font-medium text-gray-400 mb-2">Layanan Pengaduan Konsumen</li>
                             <li className="text-lg font-medium text-gray-400 mb-2">PaDI UMKM</li>
-                            <li className="text-lg font-medium text-gray-400 mb-2"><p className="text-xl"><i className='bx bxl-gmail mr-2'></i>cs@padiumkm.id</p></li>
+                            <li className="text-lg font-medium text-gray-400 mb-2"><p className="text-xl"><i className="bx bxl-gmail mr-2"></i>cs@padiumkm.id</p></li>
                             <li className="text-lg font-medium text-gray-400 mb-2">Direktorat Jenderal Perlindungan Konsumen dan Tertib Niaga</li>
                             <li className="text-lg font-medium text-gray-400 mb-2">Kementrian Perdagangan RI</li>
                         </ul>
@@ -68,8 +68,6 @@ export default function Footer() {
                     <label className="text-lg font-medium text-gray-400">&copy; Pasar Digital UMKM Indonesia</label>
                 </div>
             </div>
-
-
         </footer>
     )
 }
