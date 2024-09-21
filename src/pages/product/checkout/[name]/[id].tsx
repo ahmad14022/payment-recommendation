@@ -27,18 +27,18 @@ const Checkout = () => {
     const count = parseInt(router.query.count as string) || 1;
 
     useEffect(() => {
-        if (id) {
-            async function fetchProductCheckout() {
-                try {
-                    const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-                    setProduct(response.data);
-                    setLoading(false);
-                } catch (error) {
-                    console.error('Error fetching product details:', error);
-                    setLoading(false);
-                }
+        async function fetchProductCheckout() {
+            try {
+                const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+                setProduct(response.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching product details:', error);
+                setLoading(false);
             }
+        }
 
+        if (id) {
             fetchProductCheckout();
         }
     }, [id]);

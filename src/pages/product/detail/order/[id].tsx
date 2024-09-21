@@ -36,21 +36,22 @@ const OrderDetail = () => {
     const totalCost = totalPrice + shippingCost + shippingTax + protectionCost;
 
     useEffect(() => {
-        if (id) {
-            async function fetchOrderDetail() {
-                try {
-                    const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-                    setProduct(response.data);
-                    setLoading(false);
-                } catch (error) {
-                    console.error("Error fetching product details:", error);
-                    setLoading(false);
-                }
+        async function fetchProductCheckout() {
+            try {
+                const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+                setProduct(response.data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching product details:', error);
+                setLoading(false);
             }
+        }
 
-            fetchOrderDetail();
+        if (id) {
+            fetchProductCheckout();
         }
     }, [id]);
+
 
     if (loading) {
         return <p className="text-center text-gray-500">Loading...</p>;

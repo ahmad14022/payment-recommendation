@@ -49,35 +49,6 @@ const Page = () => {
             <Navbar />
             <div className="container-md mb-20">
                 <div className="relative min-h-[calc(100vh-100px)] bg-[#0092ac]">
-                    {/* Ellipse 1 & 2 Positioned Absolutely */}
-                    <Image
-                        src='/Ellipse-1.png'
-                        alt="Decorative ellipse 1" // Menambahkan alt yang sesuai
-                        width={600}
-                        height={600}
-                        className="absolute bottom-3 right-[320px] z-10"
-                    />
-                    <Image
-                        src='/Ellipse-2.png'
-                        alt="Decorative ellipse 2" // Menambahkan alt yang sesuai
-                        width={700}
-                        height={700}
-                        className="absolute bottom-0 right-[270px] z-10"
-                    />
-                    <Image
-                        src='/rounded.png'
-                        alt="" // Gambar dekoratif tanpa alt
-                        width={70}
-                        height={70}
-                        className="absolute top-[90px] right-10"
-                    />
-                    <Image
-                        src="/hero-1.png"
-                        alt="Hero image displaying local products" // Alt yang deskriptif
-                        width={950}
-                        height={577}
-                        className="min-h-[calc(100vh-100px)] object-cover relative z-20"
-                    />
 
 
                     {/* Hero Content */}
@@ -94,14 +65,36 @@ const Page = () => {
                             </Link>
                         </div>
 
-                        {/* Hero Image */}
+                        {/* Ellipse 1 & 2 Positioned Absolutely */}
+                        <Image
+                            src='/Ellipse-1.png'
+                            alt="Decorative ellipse 1" // Menambahkan alt yang sesuai
+                            width={600}
+                            height={600}
+                            className="absolute bottom-3 right-[320px] z-10"
+                        />
+                        <Image
+                            src='/Ellipse-2.png'
+                            alt="Decorative ellipse 2" // Menambahkan alt yang sesuai
+                            width={700}
+                            height={700}
+                            className="absolute bottom-0 right-[270px] z-10"
+                        />
+                        <Image
+                            src='/rounded.png'
+                            alt="" // Gambar dekoratif tanpa alt
+                            width={70}
+                            height={70}
+                            className="absolute top-[90px] right-10"
+                        />
                         <Image
                             src="/hero-1.png"
-                            alt="hero image"
+                            alt="Hero image displaying local products" // Alt yang deskriptif
                             width={950}
                             height={577}
                             className="min-h-[calc(100vh-100px)] object-cover relative z-20"
                         />
+
                     </div>
                 </div>
 
