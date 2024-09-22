@@ -49,8 +49,6 @@ const Page = () => {
             <Navbar />
             <div className="container-md mb-20">
                 <div className="relative min-h-[calc(100vh-100px)] bg-[#0092ac]">
-
-
                     {/* Hero Content */}
                     <div className="flex justify-around items-center h-full relative z-20">
                         <div className='flex flex-col gap-5'>
@@ -122,7 +120,7 @@ const Page = () => {
                                                         image={product.image}
                                                         price={product.price}
                                                         title={product.title}
-                                                        category={product.category} // Tambahkan category
+                                                        category={product.category}
                                                         rating={product.rating.rate}
                                                         count={product.rating.count}
                                                     />

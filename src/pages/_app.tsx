@@ -1,6 +1,13 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { TotalCostProvider } from "../context/TotalCostContext";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <TotalCostProvider>
+      <Component {...pageProps} />
+    </TotalCostProvider>
+  );
 }
+
+export default MyApp;

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
+import { useTotalCost } from "@/context/TotalCostContext";
+import Link from "next/link";
 
 interface CardDetailProps {
     title: string;
@@ -19,11 +21,12 @@ export default function CardDetail({
     category,
     rating,
     count,
-    totalPrice,
     description,
 }: CardDetailProps) {
     const [showOptions, setShowOptions] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Pilih Bank');
+    const { totalCost } = useTotalCost();
+
 
     const toggleOptions = () => {
         setShowOptions(!showOptions);
@@ -76,7 +79,7 @@ export default function CardDetail({
                             <div className="flex justify-between mt-4">
                                 <span className="text-xl font-medium text-gray-700">Total Harga</span>
                                 <p className="text-xl font-bold text-[#0092ac]">
-                                    ${totalPrice.toFixed(2)}
+                                    ${totalCost.toFixed(2)}
                                 </p>
                             </div>
                         </div>
@@ -90,14 +93,14 @@ export default function CardDetail({
                         <div className="border border-gray-200 rounded-xl p-4">
                             <div className="flex gap-3 items-center">
                                 <Image
-                                    src="/bank-mandiri.png"
+                                    src="/BRI.png"
                                     alt="Logo Bank Mandiri" // Properti alt ditambahkan
-                                    width={50}
+                                    width={60}
                                     height={20}
                                     className="h-[40px]"
                                 />
                                 <span className="text-gray-400 text-lg p-1 font-medium">
-                                    Mandiri 11-33-XXXXXXXXX-9
+                                    Bank BRI 11-33-XXXXXXX-9
                                 </span>
                                 <p className="text-4xl text-[#0092ac]">
                                     <i className="bx bxs-check-circle"></i>
@@ -146,13 +149,15 @@ export default function CardDetail({
                 </div>
                 <div className="flex gap-5 items-center p-5">
                     <div className="flex flex-col gap-2 flex-shrink-0">
-                        <p className="text-xl text-[#0092ac] font-bold">${totalPrice.toFixed(2)}</p>
+                        <p className="text-xl text-[#0092ac] font-bold">${totalCost.toFixed(2)}</p>
                         <p className="text-gray-600 text-lg font-semibold">
                             Lihat Detail Pembayaran
                         </p>
                     </div>
-                    <button className="flex-grow rounded-xl bg-[#0092ac] font-bold text-white h-12">
-                        Bayar
+                    <button className="flex-grow items-center justify-center rounded-xl bg-[#0092ac] font-bold text-white h-12">
+                        <Link href="/checkout">
+                            Bayar
+                        </Link>
                     </button>
                 </div>
             </div>

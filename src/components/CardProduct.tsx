@@ -22,8 +22,8 @@ export default function Card({ title, url, image, price, category, rating, count
                     <Image
                         src={image}
                         alt={title}
-                        width={200} // Sesuaikan lebar sesuai kebutuhan
-                        height={200} // Sesuaikan tinggi sesuai kebutuhan
+                        width={200} 
+                        height={200}
                         className="w-full h-[200px] object-cover rounded"
                     />
                 )}

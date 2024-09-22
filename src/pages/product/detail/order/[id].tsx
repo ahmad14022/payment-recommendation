@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import CardOrder from "@/components/CardOrder";
+import { useTotalCost } from "@/context/TotalCostContext";
 
 // Define the type for product
 interface Product {
@@ -28,12 +29,13 @@ const OrderDetail = () => {
     const router = useRouter();
     const { id } = router.query;
     const count = parseInt(router.query.count as string) || 1;
+    const { totalCost, setTotalCost } = useTotalCost();
 
     const shippingCost = 15.00;
     const shippingTax = 50.00;
     const protectionCost = 5.00;
     const totalPrice = product ? product.price * count : 0;
-    const totalCost = totalPrice + shippingCost + shippingTax + protectionCost;
+    const calculatedTotalCost = totalPrice + shippingCost + shippingTax + protectionCost;
 
     useEffect(() => {
         async function fetchProductCheckout() {
@@ -41,6 +43,7 @@ const OrderDetail = () => {
                 const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
                 setProduct(response.data);
                 setLoading(false);
+                setTotalCost(calculatedTotalCost);
             } catch (error) {
                 console.error('Error fetching product details:', error);
                 setLoading(false);
@@ -50,7 +53,7 @@ const OrderDetail = () => {
         if (id) {
             fetchProductCheckout();
         }
-    }, [id]);
+    }, [calculatedTotalCost, id, setTotalCost]);
 
 
     if (loading) {

@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import CardDetail from '@/components/CardDetail';
 import Footer from '@/components/Footer';
 
+
 type Product = {
     id: number;
     title: string;
