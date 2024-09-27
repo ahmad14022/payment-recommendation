@@ -1,4 +1,3 @@
-// pages/product/detail/order/[id].tsx
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -9,7 +8,6 @@ import Footer from "@/components/Footer";
 import CardOrder from "@/components/CardOrder";
 import { useTotalCost } from "@/context/TotalCostContext";
 
-// Define the type for product
 interface Product {
     id: number;
     title: string;

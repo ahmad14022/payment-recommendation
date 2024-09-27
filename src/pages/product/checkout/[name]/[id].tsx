@@ -1,4 +1,3 @@
-// pages/product/checkout/[name]/[id].tsx
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -24,7 +23,7 @@ const Checkout = () => {
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
-    const { id } = router.query; // name dihapus karena tidak digunakan
+    const { id } = router.query;
     const count = parseInt(router.query.count as string) || 1;
 
     useEffect(() => {
@@ -68,7 +67,6 @@ const Checkout = () => {
                     totalPrice={totalPrice}
                     description={product.description}
                 />
-                {/* Tambahkan detail lain yang dibutuhkan untuk checkout */}
             </div>
             <Footer />
         </>

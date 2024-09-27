@@ -62,32 +62,30 @@ const Page = () => {
                                 </button>
                             </Link>
                         </div>
-
-                        {/* Ellipse 1 & 2 Positioned Absolutely */}
                         <Image
                             src='/Ellipse-1.png'
-                            alt="Decorative ellipse 1" // Menambahkan alt yang sesuai
+                            alt="Decorative ellipse 1" 
                             width={600}
                             height={600}
                             className="absolute bottom-3 right-[320px] z-10"
                         />
                         <Image
                             src='/Ellipse-2.png'
-                            alt="Decorative ellipse 2" // Menambahkan alt yang sesuai
+                            alt="Decorative ellipse 2" 
                             width={700}
                             height={700}
                             className="absolute bottom-0 right-[270px] z-10"
                         />
                         <Image
                             src='/rounded.png'
-                            alt="" // Gambar dekoratif tanpa alt
+                            alt="" 
                             width={70}
                             height={70}
                             className="absolute top-[90px] right-10"
                         />
                         <Image
                             src="/hero-1.png"
-                            alt="Hero image displaying local products" // Alt yang deskriptif
+                            alt="Hero image displaying local products"
                             width={950}
                             height={577}
                             className="min-h-[calc(100vh-100px)] object-cover relative z-20"
@@ -96,16 +94,7 @@ const Page = () => {
                     </div>
                 </div>
 
-
-
                 <div className="flex flex-col justify-center items-center mt-7 gap-7">
-                    {/* <Image
-                        src='/banner.png'
-                        alt="banner"
-                        width={1390}
-                        height={500}
-                        className="rounded-lg" // Tailwind CSS class for border-radius
-                    /> */}
                     <div className="flex flex-col">
                         <h1 className="text-3xl font-bold text-gray-700">Koleksi Barang Aksesoris</h1>
                         <div className="flex justify-center gap-5">

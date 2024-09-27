@@ -1,4 +1,3 @@
-// pages/product/detail/[id].tsx
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -97,7 +96,6 @@ const ProductDetail = () => {
                                             +
                                         </button>
                                     </div>
-
                                     <h1 className="text-lg text-gray-500">Total Harga</h1>
                                     <h1 className="text-3xl font-bold text-[#0092ac]">$ {product.price * countProduct}</h1>
                                     <Link href={`/product/detail/order/${product.id}?count=${countProduct}`}>

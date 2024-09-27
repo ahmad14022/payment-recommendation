@@ -46,7 +46,7 @@ export default function CardDetail({
                         <div className="flex gap-7">
                             <Image
                                 src={image}
-                                alt={`Gambar ${title}`} // Properti alt ditambahkan
+                                alt={`Gambar ${title}`}
                                 width={200}
                                 height={200}
                                 className="h-[300px] object-cover rounded"
@@ -94,7 +94,7 @@ export default function CardDetail({
                             <div className="flex gap-3 items-center">
                                 <Image
                                     src="/BRI.png"
-                                    alt="Logo Bank Mandiri" // Properti alt ditambahkan
+                                    alt="Logo Bank Mandiri" 
                                     width={60}
                                     height={20}
                                     className="h-[40px]"
