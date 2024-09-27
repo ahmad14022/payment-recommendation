@@ -64,7 +64,7 @@ const Checkout = () => {
                         />
                     </div>
                     <div className="border-b border-gray-200 flex justify-between p-3 items-center">
-                        <p className="text-lg text-gray-600">Nomor Rekening Bank</p>
+                        <p className="text-lg text-gray-600">Nomor Virtual Account</p>
                         <div className="flex items-center gap-2">
                             <p className="text-lg font-bold text-gray-600">11-33-XXXXXXX-9  </p>
                             <span className="text-[#0092ac] border-b border-[#0092ac] cursor-pointer">Salin</span>
