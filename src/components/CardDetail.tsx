@@ -107,7 +107,7 @@ export default function CardDetail({
                                 </p>
                             </div>
                             <p className="text-gray-400 text-lg mt-2">
-                                Dipilih otomatis karena sering digunakan
+                                Rekomendasi Terbaikmu!
                             </p>
                         </div>
                         <div
